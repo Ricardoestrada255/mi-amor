@@ -3,7 +3,8 @@
 
   // Validaciones del login
   const VALID_USERNAME = 'Sinay';
-  const VALID_PASSWORD = '12052009';
+  const VALID_PASSWORD = '12052026';
+
 
   const pageLogin = $('page-login');
   const pagePoems = $('page-poems');
@@ -78,14 +79,15 @@
     const okPass = p === VALID_PASSWORD;
 
     if (!okUser) {
-      loginError.textContent = 'Usuario incorrecto. Debe ser: Sinay 💖';
+      loginError.textContent = 'no te sabes no nombre???';
       return false;
     }
 
     if (!okPass) {
-      loginError.textContent = 'Contraseña incorrecta. Debe ser: 12052009 📅';
+      loginError.textContent = 'ya tan rapido se te olvido??';
       return false;
     }
+
 
     return true;
   }
