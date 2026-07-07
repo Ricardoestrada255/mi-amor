@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Un mes contigo, mi amor 💕</title>
+  <meta name="description" content="Web romántica con inicio de sesión y poemas de amor." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fondo decorativo -->
+  <div class="bg">
+    <div class="rose">🌹</div>
+    <div class="geom">
+      <span class="g c1"></span>
+      <span class="g c2"></span>
+      <span class="g c3"></span>
+      <span class="g c4"></span>
+      <span class="g c5"></span>
+    </div>
+    <div class="hearts" aria-hidden="true" id="hearts"></div>
+    <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+  </div>
+
+  <main class="app" aria-live="polite">
+    <!-- Página 1: Login -->
+    <section class="panel" id="page-login" data-page="login">
+      <header class="panel__header">
+        <div class="brand">
+          <span class="brand__icon">💖</span>
+          <h1 class="brand__title">Acceso</h1>
+        </div>
+        <p class="panel__subtitle">{ amor en clave } 🔒</p>
+      </header>
+
+      <form class="form" id="loginForm" autocomplete="off">
+        <label class="field">
+          <span class="field__label">Usuario</span>
+          <div class="field__input">
+            <span class="field__emoji">👤</span>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              inputmode="text"
+              placeholder="Sinay 💖"
+              required
+              minlength="2"
+              maxlength="40"
+            />
+          </div>
+          <small class="field__hint" id="hint-username">Solo acepta: Sinay 💖</small>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Contraseña</span>
+          <div class="field__input">
+            <span class="field__emoji">📅</span>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              inputmode="numeric"
+              placeholder="12052009 📅"
+              required
+              minlength="8"
+              maxlength="8"
+            />
+          </div>
+          <small class="field__hint" id="hint-password">Solo acepta: 12052009 📅</small>
+        </label>
+
+        <button class="btn" type="submit" id="loginBtn">
+          <span class="btn__icon" aria-hidden="true">🔒</span>
+          <span class="btn__text">Acceder</span>
+          <span class="btn__open" aria-hidden="true">🔓</span>
+        </button>
+
+        <p class="error" id="loginError" role="status" aria-live="polite"></p>
+
+        <div class="mini">
+          <span>Modo romántico activado ✨</span>
+        </div>
+      </form>
+
+      <button class="surprise" type="button" id="surpriseBtn">
+        <span class="surprise__icon">💞</span>
+        Mensaje sorpresa
+      </button>
+
+      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    </section>
+
+    <!-- Página 2: Poemas -->
+    <section class="panel panel--poems" id="page-poems" data-page="poems" hidden>
+      <header class="panel__header panel__header--poems">
+        <div class="poems-title">
+          <div class="poems-title__emoji">💕</div>
+          <h1 class="poems-title__text">Un mes contigo, mi amor</h1>
+        </div>
+        <div class="counter" id="counter" title="Contador de tiempo">🕒 1 mes juntos</div>
+      </header>
+
+      <div class="poems-wrap">
+        <div class="poem-card" id="poemCard">
+          <p class="poem-card__kicker" id="poemKicker">🌹✨💌💞</p>
+          <p class="poem-card__text" id="poemText"></p>
+          <p class="poem-card__by" id="poemBy"></p>
+        </div>
+
+        <div class="nav">
+          <button class="nav-btn" type="button" id="prevBtn" aria-label="Poema anterior">
+            <span aria-hidden="true">⬅️</span>
+          </button>
+          <button class="nav-btn" type="button" id="nextBtn" aria-label="Siguiente poema">
+            <span aria-hidden="true">➡️</span>
+          </button>
+        </div>
+
+        <div class="actions">
+          <button class="ghost" type="button" id="surpriseBtn2">
+            <span aria-hidden="true">💝</span> Eres mi todo
+          </button>
+          <button class="ghost ghost--danger" type="button" id="logoutBtn">
+            <span aria-hidden="true">↩️</span> Volver al login
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
+

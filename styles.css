@@ -1,0 +1,277 @@
+:root{
+  --bg1:#ffe3f1;
+  --bg2:#f7c6e0;
+  --bg3:#ead7ff;
+  --ink:#3b1b2f;
+  --muted:rgba(59,27,47,.7);
+  --card:rgba(255,255,255,.72);
+  --card2:rgba(255,255,255,.55);
+  --stroke:rgba(255,255,255,.45);
+  --rose:#ff4d9d;
+  --rose2:#ff2f6f;
+  --lilac:#b58bff;
+  --gold:#f6c453;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Quicksand, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  overflow-x:hidden;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(255,77,157,.18), transparent 55%),
+    radial-gradient(1000px 500px at 80% 20%, rgba(181,139,255,.20), transparent 55%),
+    linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 100%);
+}
+
+.bg{position:fixed; inset:0; pointer-events:none; z-index:0;}
+.rose{
+  position:absolute; top:28px; right:26px;
+  font-size:46px;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.08));
+  transform-origin:center;
+  animation: floatRose 6s ease-in-out infinite;
+}
+@keyframes floatRose{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-10px) rotate(6deg)}
+}
+
+.geom{position:absolute; inset:0; opacity:.55;}
+.g{position:absolute; border-radius:50%; filter: blur(.2px);}
+.c1{width:160px; height:160px; left:8%; top:30%; background:rgba(255,77,157,.14);}
+.c2{width:110px; height:110px; left:25%; top:12%; background:rgba(181,139,255,.16);}
+.c3{width:190px; height:190px; right:16%; top:22%; background:rgba(255,207,232,.45);}
+.c4{width:70px; height:70px; right:10%; top:52%; background:rgba(181,139,255,.18);}
+.c5{width:130px; height:130px; left:50%; top:68%; background:rgba(255,77,157,.10);}
+
+.hearts{position:absolute; inset:0;}
+.heart{
+  position:absolute;
+  bottom:-10px;
+  font-size:20px;
+  opacity:.9;
+  animation: rise var(--dur) linear infinite;
+  left:var(--x);
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.08));
+}
+@keyframes rise{
+  0%{transform: translateY(0) scale(.9) rotate(0deg); opacity:.0}
+  10%{opacity:.95}
+  100%{transform: translateY(-110vh) scale(1.15) rotate(12deg); opacity:0}
+}
+
+.sparkles{position:absolute; inset:0;}
+.sparkle{
+  position:absolute;
+  font-size:16px;
+  opacity:.8;
+  animation: twinkle var(--dur) ease-in-out infinite;
+  left:var(--x);
+  top:var(--y);
+}
+@keyframes twinkle{
+  0%,100%{transform:scale(.8); opacity:.35}
+  50%{transform:scale(1.2); opacity:1}
+}
+
+.app{position:relative; z-index:1; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:28px 16px;}
+
+.panel{
+  width:min(980px, 100%);
+  background: linear-gradient(180deg, var(--card) 0%, var(--card2) 100%);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow: 0 30px 80px rgba(0,0,0,.10);
+  border-radius:26px;
+  overflow:hidden;
+}
+
+.panel__header{
+  padding:22px 22px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  background: linear-gradient(135deg, rgba(255,255,255,.55), rgba(255,255,255,.22));
+  border-bottom:1px solid rgba(255,255,255,.45);
+}
+
+.brand{display:flex; align-items:center; gap:10px;}
+.brand__icon{font-size:22px; animation: pulse 1.8s ease-in-out infinite;}
+.brand__title{font-size:20px; margin:0;}
+.panel__subtitle{margin:0; color:var(--muted); font-weight:600;}
+
+.panel__header--poems{align-items:center;}
+
+.poems-title{display:flex; flex-direction:column; gap:6px;}
+.poems-title__emoji{font-size:18px;}
+.poems-title__text{
+  margin:0;
+  font-family: Dancing Script, cursive;
+  font-size:34px;
+  letter-spacing:.2px;
+}
+
+.counter{
+  background: rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.6);
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  color: rgba(59,27,47,.85);
+}
+
+.form{padding:22px 22px 8px; display:flex; flex-direction:column; gap:14px;}
+.field{display:flex; flex-direction:column; gap:8px;}
+.field__label{font-weight:800; font-size:14px; display:flex; align-items:center; gap:8px;}
+.field__input{position:relative; display:flex; align-items:center;}
+.field__emoji{position:absolute; left:12px; font-size:18px;}
+input[type="text"],input[type="password"]{
+  width:100%;
+  padding:14px 14px 14px 44px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.7);
+  background: rgba(255,255,255,.60);
+  outline:none;
+  font-size:15px;
+}
+input:focus{
+  border-color: rgba(255,77,157,.45);
+  box-shadow: 0 0 0 5px rgba(255,77,157,.15);
+}
+.field__hint{font-size:13px; color:var(--muted)}
+
+.btn{
+  border:none;
+  cursor:pointer;
+  background: linear-gradient(135deg, rgba(255,77,157,.95), rgba(181,139,255,.85));
+  color:white;
+  padding:14px 16px;
+  border-radius:18px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover{transform: translateY(-1px); filter: brightness(1.03)}
+
+.btn__icon{display:inline-flex; width:24px; justify-content:center;}
+.btn__open{display:none;}
+
+/* Animación de apertura al acertar */
+.btn--success .btn__icon{display:none}
+.btn--success .btn__open{display:inline-flex;}
+.btn--success{animation: doorOpen .9s ease both;}
+@keyframes doorOpen{0%{transform:scale(1)} 40%{transform:scale(1.03)} 100%{transform:scale(1)}}
+
+.error{
+  min-height:22px;
+  padding:0 22px 12px;
+  color:#b0003a;
+  font-weight:800;
+}
+
+.mini{
+  padding:0 22px 18px;
+  color: rgba(59,27,47,.7);
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.surprise{
+  margin:0 22px 22px;
+  width: calc(100% - 44px);
+  border-radius:18px;
+  border:1px dashed rgba(181,139,255,.55);
+  background: rgba(255,255,255,.45);
+  padding:13px 14px;
+  cursor:pointer;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  transition: transform .15s ease, background .15s ease;
+}
+.surprise:hover{transform: translateY(-1px); background: rgba(255,255,255,.6)}
+
+.toast{
+  padding:10px 14px;
+  margin:0 22px 22px;
+  border-radius:14px;
+  background: rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.6);
+  color: rgba(59,27,47,.9);
+  font-weight:900;
+  display:none;
+}
+.toast--show{display:block; animation: toastIn .25s ease both;}
+@keyframes toastIn{from{transform:translateY(8px); opacity:0} to{transform:translateY(0); opacity:1}}
+
+.panel--poems{padding-bottom:22px;}
+.poems-wrap{padding:22px; display:flex; flex-direction:column; gap:18px;}
+
+.poem-card{
+  background: rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:22px;
+  padding:22px;
+  text-align:center;
+}
+
+.poem-card__kicker{font-weight:900; color: rgba(255,47,111,.9); margin-bottom:8px;}
+.poem-card__text{
+  margin:0;
+  font-family: Dancing Script, cursive;
+  font-size:28px;
+  line-height:1.35;
+}
+.poem-card__by{margin-top:12px; color:var(--muted); font-weight:800;}
+
+.nav{display:flex; gap:12px; justify-content:space-between; align-items:center;}
+.nav-btn{
+  flex:1;
+  border:none;
+  cursor:pointer;
+  border-radius:18px;
+  background: rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.7);
+  padding:12px 14px;
+  font-weight:900;
+  transition: transform .15s ease, background .15s ease;
+}
+.nav-btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.7)}
+
+.actions{display:flex; gap:12px; flex-wrap:wrap;}
+.ghost{
+  border-radius:18px;
+  padding:12px 14px;
+  border:1px solid rgba(181,139,255,.45);
+  background: rgba(255,255,255,.35);
+  cursor:pointer;
+  font-weight:900;
+  color: rgba(59,27,47,.9);
+  flex:1;
+  min-width: 220px;
+  transition: transform .15s ease, background .15s ease;
+}
+.ghost:hover{transform: translateY(-1px); background: rgba(255,255,255,.55)}
+.ghost--danger{border-color: rgba(255,47,111,.45)}
+
+@keyframes pulse{0%,100%{transform:scale(1)} 50%{transform:scale(1.08)}}
+
+/* Responsive */
+@media (max-width: 720px){
+  .panel__header{flex-direction:column; align-items:flex-start;}
+  .poems-title__text{font-size:30px;}
+  .poems-wrap{padding:18px;}
+  .poem-card{padding:18px;}
+  .poem-card__text{font-size:24px;}
+}
+
