@@ -134,9 +134,10 @@
     }
 
     if (!okPass) {
-      loginError.textContent = 'ya tan rapido se te olvido la fecha??';
+      loginError.textContent = 'ya tan rapido se te olvido la fecha';
       return false;
     }
+
 
     return true;
   }
