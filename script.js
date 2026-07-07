@@ -5,7 +5,6 @@
   const VALID_USERNAME = 'Sinay';
   const VALID_PASSWORD = '12052026';
 
-
   const pageLogin = $('page-login');
   const pagePoems = $('page-poems');
 
@@ -25,26 +24,77 @@
 
   const SURPRISE_MSG = 'Eres mi todo 💞';
 
+  // Poemas / frases románticas (14)
   const POEMS = [
     {
-      kicker: '🌹✨💌💞',
-      text: 'Contigo el tiempo sonríe,\nmi corazón late más lento…\npero ama con más fuerza.',
-      by: '— para Sinay'
+      kicker: '🌹✨💌',
+      text: 'Tú llegaste y el mundo cambió de color…\ncomo si alguien hubiera encendido\nla luz justo donde yo estaba roto.',
+      by: '— para ti'
     },
     {
       kicker: '💞',
-      text: 'Si una estrella pudiera hablar,\nle diría a la luna: \n“ella es mi lugar favorito”.',
-      by: '— con amor'
+      text: 'Eres mi paz cuando todo se acelera,\nmi calma cuando el miedo aparece\ny mi risa cuando la tristeza insiste.',
+      by: '— tu amor'
+    },
+    {
+      kicker: '⭐',
+      text: 'Me salvaste sin darte cuenta:\nme devolviste el aire\ny me enseñaste a creer otra vez.',
+      by: '— gracias'
+    },
+    {
+      kicker: '🌙',
+      text: 'Contigo aprendí que el amor\nno es prisa: es hogar.\nEs quedarme…\na tu lado, siempre.',
+      by: '— siempre tuyo'
     },
     {
       kicker: '✨',
-      text: 'Un mes contigo y ya entiendo\nque el hogar no es un sitio:\nson tus abrazos.',
-      by: '— siempre'
+      text: 'El tiempo se vuelve suave cuando estás,\nlos días parecen menos pesados\ny mi corazón encuentra su lugar contigo.',
+      by: '— contigo'
+    },
+    {
+      kicker: '💗',
+      text: 'Si me preguntas qué deseo,\nte diría que sigamos siendo\nla historia linda que crece\nen cada abrazo.',
+      by: '— mi vida'
     },
     {
       kicker: '🌹',
-      text: 'Eres la calma que me encuentra,\nel motivo de mis sonrisas\ny el “para siempre” en mi pecho.',
-      by: '— tu persona'
+      text: 'Tú me iluminas la vida:\nmi dentro se siente cálido\ncomo una mañana bonita\nrecién nacida.',
+      by: '— tu luz'
+    },
+    {
+      kicker: '🫶',
+      text: 'Eres esa persona que al mirarla\nme dan ganas de cuidar\nlo que siento\ncomo si fuera lo más sagrado.',
+      by: '— mi tesoro'
+    },
+    {
+      kicker: '💞',
+      text: 'Yo no sé cómo explicarlo…\npero contigo todo tiene sentido.\nHasta las noches\nse vuelven regalo.',
+      by: '— en serio'
+    },
+    {
+      kicker: '✨💌',
+      text: 'Un mes contigo y ya entiendo\nque el amor es quedarse.\nEs elegirte en silencio\nuna y otra vez.',
+      by: '— el amor de mi vida'
+    },
+    {
+      kicker: '🌙💞',
+      text: 'Cuando dudes, recuerda esto:\nme tienes.\nTu corazón no está solo…\nyo lo acompaño.',
+      by: '— tu compañero'
+    },
+    {
+      kicker: '❤️',
+      text: 'Me haces sentir valiente,\nme haces creer en lo bonito\ny si el mundo se pone difícil…\nme quedo contigo.',
+      by: '— siempre'
+    },
+    {
+      kicker: '💗✨',
+      text: 'Si pudiera devolverte todo lo que eres,\nte daría mi tiempo,\nmis ganas de luchar\ny mi corazón entero.',
+      by: '— para ti'
+    },
+    {
+      kicker: '🌹',
+      text: 'Gracias por aparecer.\nGracias por quedarte.\nGracias por hacerme llorar de alegría\ncon solo mirarte.',
+      by: '— con amor'
     }
   ];
 
@@ -88,7 +138,6 @@
       return false;
     }
 
-
     return true;
   }
 
@@ -107,7 +156,6 @@
     setTimeout(() => {
       showPage('poems');
       renderPoem(0);
-      // contador está fijo en el HTML como “1 mes juntos”, pero podemos mantenerlo por si se quiere cambiar
     }, 300);
   });
 
@@ -200,4 +248,3 @@
   // Inicial
   renderPoem(0);
 })();
-
