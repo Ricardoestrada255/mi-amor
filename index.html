@@ -36,6 +36,7 @@
           <h1 class="brand__title">Acceso</h1>
         </div>
         <p class="panel__subtitle">{ amor en clave } 🔒</p>
+
       </header>
 
       <form class="form" id="loginForm" autocomplete="off">
@@ -48,13 +49,15 @@
               name="username"
               type="text"
               inputmode="text"
-              placeholder="Sinay 💖"
+              placeholder=""
+
               required
               minlength="2"
               maxlength="40"
             />
           </div>
-          <small class="field__hint" id="hint-username">Solo acepta: Sinay 💖</small>
+          <small class="field__hint" id="hint-username">Pista1: el nombre del amor de mi vida</small>
+
         </label>
 
         <label class="field">
@@ -66,13 +69,15 @@
               name="password"
               type="password"
               inputmode="numeric"
-              placeholder="12052009 📅"
+              placeholder=""
+
               required
               minlength="8"
               maxlength="8"
             />
           </div>
-          <small class="field__hint" id="hint-password">Solo acepta: 12052009 📅</small>
+          <small class="field__hint" id="hint-password">Pista2: la fecha en que nos hicimos novios</small>
+
         </label>
 
         <button class="btn" type="submit" id="loginBtn">
@@ -137,4 +142,3 @@
 <script src="script.js" defer></script>
 </body>
 </html>
-
