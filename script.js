@@ -129,12 +129,12 @@
     const okPass = p === VALID_PASSWORD;
 
     if (!okUser) {
-      loginError.textContent = 'no te sabes no nombre???';
+      loginError.textContent = 'no te sabes tu propio nombre???';
       return false;
     }
 
     if (!okPass) {
-      loginError.textContent = 'ya tan rapido se te olvido??';
+      loginError.textContent = 'ya tan rapido se te olvido la fecha??';
       return false;
     }
 
