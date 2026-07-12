@@ -3,7 +3,7 @@
 
   // Validaciones del login
   const VALID_USERNAME = 'Sinay';
-  const VALID_PASSWORD = '12052026';
+  const VALID_PASSWORD = '12062026';
 
   const pageLogin = $('page-login');
   const pagePoems = $('page-poems');
